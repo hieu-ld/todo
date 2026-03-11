@@ -1,0 +1,9 @@
+1. cài nodemon để server tự restart khi dữ liệu thay đổi, và cài đặt ở phía dev (-D)
+    npm i nodemon -D
+
+2. script start dùng để chạy khi deploy lên server thật
+    "start": "node server.js"
+
+3. controller là nơi chứa logic xử lý chính
+
+4. schema là bản thiết kế chi tiết của model, còn model là nơi lưu dữ liệu cần
