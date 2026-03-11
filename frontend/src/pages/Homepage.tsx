@@ -68,12 +68,13 @@ const Homepage = () => {
     }
 
     // logic pagination
-    const visibleTasks = filteredTasks.slice(
-        (page - 1) * visibleTaskLimit,
-        page * visibleTaskLimit
-    );
-
     const totalPages = Math.ceil(filteredTasks.length / visibleTaskLimit);
+    const safePage = Math.min(page, Math.max(1, totalPages));
+
+    const visibleTasks = filteredTasks.slice(
+        (safePage - 1) * visibleTaskLimit,
+        safePage * visibleTaskLimit
+    );
 
     const handleNext = () => {
         if (page < totalPages) {
@@ -89,10 +90,6 @@ const Homepage = () => {
 
     const handlePageChange = (newPage: number) => {
         setPage(newPage);
-    }
-
-    if (visibleTasks.length === 0) {
-        handlePrev();
     }
 
     return (
@@ -126,7 +123,7 @@ const Homepage = () => {
                     handleNext={handleNext}
                     handlePrev={handlePrev}
                     handlePageChange={handlePageChange}
-                    page={page}
+                    page={safePage}
                     totalPages={totalPages}
                 />
                 <DateTimeFilter 
