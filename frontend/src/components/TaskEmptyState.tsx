@@ -1,10 +1,11 @@
 import { Circle } from "lucide-react";
 import { Card } from "./ui/card";
+import type { Filter } from "@/lib/types";
 
 
 
 
-const TaskEmptyState = ({ filter }) => {
+const TaskEmptyState = ({ filter }: { filter: Filter}) => {
     return (
         <Card className="p-8 text-center border-0 shadow-md">
             <div className="space-y-3">
