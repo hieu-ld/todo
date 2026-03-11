@@ -1,23 +1,22 @@
 {
-  "name": "todolist",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "npm run start --prefix backend && npm run start --prefix frontend"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hieu-ld/todo.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/hieu-ld/todo/issues"
-  },
-  "homepage": "https://github.com/hieu-ld/todo#readme"
+    "name": "todolist",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "npm install --prefix backend && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend",
+        "start": "node backend/server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hieu-ld/todo.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/hieu-ld/todo/issues"
+    },
+    "homepage": "https://github.com/hieu-ld/todo#readme"
 }
