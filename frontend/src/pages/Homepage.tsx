@@ -24,7 +24,7 @@ const Homepage = () => {
     const fetchTasks = useCallback(async () => {
         try {
             const res = await api.get(`/tasks?filter=${dateQuery}`);
-            setTaskBuffer(res.data.tasks);
+            setTaskBuffer(res.data.tasks ?? []);
             setActiveTaskCount(res.data.activeCount);
             setCompletedTaskCount(res.data.completedCount);
         } catch (error) {
